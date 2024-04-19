@@ -4,15 +4,6 @@ app = Flask(__name__)
 
 @app.route('/',methods=['GET', 'POST'])
 def index():
-    # if request.method == "POST":
-    #     if 'submit' in request.form:
-    #         result = calculate(request.form)
-    #         return render_template('index.html', result=result, form=request.form)
-    #     elif 'clear' in request.form:
-    #         return render_template("index.html", result=None, form={})
-    #
-    # else:
-    #     return render_template('index.html', result=None, form={})
     return render_template('index.html')
 
 
@@ -34,13 +25,13 @@ def calculate():
     if 'survey' in form:
         grade += 1
 
-    if 60 <= grade <= 69:
+    if 60 < grade < 70:
         letter = "D"
-    elif 70 <= grade <= 79:
+    elif 70 < grade < 80:
         letter = "C"
-    elif 80 <= grade <= 89:
+    elif 80 < grade < 90:
         letter = "B"
-    elif 90 <= grade:
+    elif 90 < grade:
         letter = "A"
     else:
         letter = "F"
